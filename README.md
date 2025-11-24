@@ -1,43 +1,59 @@
 Book Finder Website
 Overview
 
-Book Finder Website is a web application that allows users to search for books by title or author using the Google Books API. It displays book cover, title, author(s), and published date in a clean, user-friendly interface.
+Book Finder is a web application that allows users to search for books by title or author, filter results, and sort them using the Google Books API. It displays book cover, title, authors, and published year in a clean, user-friendly interface.
 
-Website: https://www.bonheurdivin.tech/
+Website Link: https://www.bonheurdivin.tech/
 
-Video link: 
+Demo video link: https://drive.google.com/file/d/1l3h52OFSYtj6MsoMlzSggxwBvYqi-ddl/view?usp=drive_link
 
 Features
 
-Search for books by title or author
+Search books by title or author using a Search button
 
-Display book cover, title, author(s), and published date
+Filter results by:
 
-Clean, modern, medium-level design
+Published Year (before or after 2010)
+
+Print Type (Books / Magazines)
+
+Sort results by:
+
+Title (A–Z)
+
+Published Date (Newest first)
+
+Responsive and clean UI
 
 Technologies
 
-HTML – Website structure
+HTML
 
-CSS – Styling
+CSS
 
-JavaScript – Fetch data and display results
+JavaScript (Fetch API)
 
-Google Books API – External API for book information
+Google Books REST API
 
 How to Run
 
-Open the provided link in a web browser.
+Open the project folder
 
-Enter a book title or author in the search bar.
+Open the above link in a browser
 
-Click Search or press Enter to see results.
+Enter a book title or author in the search bar
 
-Project Files
-index.html
-style.css
-script.js
-README.md
+Click the green Search button
+
+Apply filters and sorting as needed
+
+Browse the results displayed below
+
+Project Structure
+index.html      # Main HTML file
+style.css       # Styles for layout and design
+script.js       # JavaScript to fetch and display book data
+README.md       # This documentation
 
 Google Books API Documentation
 Base URL
@@ -55,10 +71,10 @@ https://www.googleapis.com/books/v1/volumes?q=harry+potter
 
 Parameters
 Parameter	Description	Example
-q	Search query (title, author, keyword)	q=harry+potter
-maxResults	Number of results to return (max 40)	maxResults=20
-printType	Type of print (books or magazines)	printType=books
-Response Structure (JSON)
+q	Search keyword (title or author)	q=harry potter
+printType	Type of print (books / magazines)	printType=books
+maxResults	Number of results (max 40)	maxResults=20
+Response Structure
 
 items – Array of books
 
@@ -72,7 +88,7 @@ volumeInfo.categories – Array of categories
 
 volumeInfo.imageLinks.thumbnail – Book cover image
 
-Example JSON snippet:
+Example:
 
 {
   "items": [
@@ -90,11 +106,17 @@ Example JSON snippet:
   ]
 }
 
-Notes
+Filtering & Sorting Logic
 
-No API key is required for basic searches.
+Year Filter: Show books published before or after 2010
 
-The API supports filtering, sorting, and other advanced queries (not used in this beginner project).
+Print Type Filter: Filter by books or magazines using printType parameter
+
+Sorting:
+
+Title (A–Z) – Alphabetical order
+
+Published Date (Newest) – Convert date to year and sort descending
 
 Acknowledgements
 
